@@ -1,5 +1,4 @@
 <?php
-$title = "Личный кабинет";
 $style = "
 .lk {
   background: brown;
@@ -76,8 +75,9 @@ $style = "
   display: none;
 }"
 ;
-require_once("header.php");
+$title = "Личный кабинет";
 session_start();
+require_once("header.php");
 ?>
   <div class="lk container-flex">
     <h1>Личный кабинет</h1>
@@ -146,4 +146,3 @@ session_start();
     }
   </script>
 <?php require_once("footer.php") ?>
-  
