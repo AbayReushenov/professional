@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60094aeb-16ef-4521-b2bc-c5fc1bcb81a4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/my-app/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-app/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-app/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-first-app" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ipLvKVLfhIK64lo5ks1wjAJrXd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -21,9 +25,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/my-first-app" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/my-first-app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/my-app/public" />
+      <recent name="$PROJECT_DIR$/my-app/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/my-first-app" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -38,7 +53,7 @@
       <workItem from="1602600273497" duration="734000" />
       <workItem from="1602601047879" duration="5049000" />
       <workItem from="1602670464619" duration="646000" />
-      <workItem from="1602671118113" duration="1767000" />
+      <workItem from="1602671118113" duration="6705000" />
     </task>
     <servers />
   </component>
@@ -55,5 +70,9 @@
     </state>
     <state x="637" y="209" key="FileChooserDialogImpl/0.41.1920.985/1920.0.1920.1080@0.41.1920.985" timestamp="1602607537116" />
     <state x="2557" y="184" width="636" height="719" key="FileChooserDialogImpl/0.41.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602600039479" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1602677289411">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1602677289411" />
   </component>
 </project>
