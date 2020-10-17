@@ -1,49 +1,57 @@
 import React, {Component} from 'react';
+import {NavLink} from "react-router-dom";
+
+const Tr = (x) =>
+    <tr>
+        <th scope="row">{x.index}</th>
+        <td><NavLink to={"user/" + x.id }>{x.name} {x.lastname}</NavLink></td>
+        <td>{x.email}</td>
+        <th scope="row">{x.id}</th>
+    </tr>
+;
 
 export default class Users extends Component {
+    constructor() {
+        super();
+        this.state = {
+            users: []
+        }
+    }
+    componentDidMount() {
+        fetch("http://hostingaba.beget.tech/getUsers")
+            .then(response => response.json())
+            .then(users => {
+                let rowsOfTable;
+                rowsOfTable = users.map((user, index) => {
+                    return  <Tr
+                                name={user.name}
+                                lastname={user.lastname}
+                                index={index + 1}
+                                email={user.email}
+                                id={user.id}
+                            />
+                })
+                this.setState({
+                    users: rowsOfTable
+                })
+            })
+
+    }
+
     render() {
         return (
             <table className="table">
                 <caption>Список пользователей</caption>
                 <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Имя</th>
-                    <th scope="col">Фамилия</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Имя  Фамилия</th>
                     <th scope="col">E-mail</th>
+                    <th scope="col">ID</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Иван</td>
-                    <td>Иванов</td>
-                    <td>ivan.ivanov@mail.com</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Анна</td>
-                    <td>Ахматова</td>
-                    <td>anna.achmatova@mail.ru</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>mark.otto@mdo.com</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>jacob.thorton@fat.net</td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Larry</td>
-                    <td>Bird</td>
-                    <td>larry.bird@twitter.com</td>
-                </tr>
+                    {this.state.users}
                 </tbody>
             </table>
         )

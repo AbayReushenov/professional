@@ -14,7 +14,10 @@ import Users from'./components/Users'
               <Menu/>
             </div>
             <div className="col-9">
-              <Route path="/profile" render={() => {
+              <Route exact path="/profile" render={() => {
+                return <Profile/>
+              }}/>
+              <Route path="/user" render={() => {
                 return <Profile/>
               }}/>
               <Route path="/settings" render={() => {
