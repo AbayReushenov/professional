@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6eda03bd-fd6b-4454-86f9-c9daa33d7356" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../php/sklyarPhp/part7_form1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../react/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +10,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1jBcBydEwrlfMkS2DxTlzBdSRvW" />
@@ -24,6 +28,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -44,17 +49,37 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603280793094</updated>
-      <workItem from="1603280794116" duration="188000" />
+      <workItem from="1603280794116" duration="1824000" />
     </task>
+    <task id="LOCAL-00001" summary="21.10.2020">
+      <created>1603283772690</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603283772690</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="21.10.2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="21.10.2020" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="2439" y="116" width="1031" height="831" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603280909358">
+    <state x="2489" y="67" width="912" height="918" key="CommitChangelistDialog2" timestamp="1603283772634">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2439" y="116" width="1031" height="831" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1603280909358" />
+    <state x="2489" y="67" width="912" height="918" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1603283772634" />
+    <state x="2545" y="259" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1603283985592">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2545" y="259" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1603283985592" />
+    <state x="2439" y="116" width="1031" height="831" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603284024550">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2439" y="116" width="1031" height="831" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1603284024550" />
   </component>
 </project>
