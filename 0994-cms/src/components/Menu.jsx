@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 
 
-const Menu = function(){
+export const Menu = function(){
     return (
         <div className="col-3">
             <div className="nav flex-column nav-pills" aria-orientation="vertical">
@@ -12,4 +12,4 @@ const Menu = function(){
         </div>
     );
 };
-export default Menu;
+

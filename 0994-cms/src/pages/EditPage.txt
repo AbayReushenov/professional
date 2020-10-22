@@ -1,0 +1,2 @@
+данные для обращения на сервер:
+http://test.hostingaba.beget.tech/addPage
