@@ -10,12 +10,16 @@ export default class AddPage extends React.Component {
     constructor() {
         super();
         this.htmlEditor = createRef();
+        this.cssEditor = createRef();
+        this.jsEditor = createRef();
         this.handleSave = this.handleSave.bind(this);
     }
 
     handleSave(){
         let formData = new FormData();
-        formData.append('html',this.htmlEditor.current.editor.getValue())
+        formData.append('html',this.htmlEditor.current.editor.getValue());
+        formData.append('css',this.cssEditor.current.editor.getValue());
+        formData.append('js',this.jsEditor.current.editor.getValue());
         fetch("http://test.hostingaba.beget.tech/addPage",{
             method: 'POST',
             body: formData
@@ -38,7 +42,7 @@ export default class AddPage extends React.Component {
                        aria-controls="nav-css" aria-selected="false">CSS</a>
                     <a className="nav-link" id="nav-js-tab" data-toggle="tab" href="#nav-js" role="tab"
                        aria-controls="nav-js" aria-selected="false">JS</a>
-                    <button onClick={this.handleSave} className="btn btn-light ml-auto">[сохранить]</button>
+                    <button onClick={this.handleSave} className="btn btn-success ml-auto">cохранить</button>
                 </div>
             </nav>
             <div className="tab-content" id="nav-tabContent">
@@ -59,6 +63,7 @@ export default class AddPage extends React.Component {
                         mode="css"
                         width="100%"
                         theme="vibrant_ink"
+                        ref={this.cssEditor}
                         setOptions={{
                             fontSize:18,
                             enableEmmet:true
@@ -70,6 +75,7 @@ export default class AddPage extends React.Component {
                         mode="javascript"
                         width="100%"
                         theme="vibrant_ink"
+                        ref={this.jsEditor}
                         setOptions={{
                             fontSize:18,
                             enableEmmet:true
@@ -77,9 +83,6 @@ export default class AddPage extends React.Component {
                     />
                 </div>
             </div>
-
-
-
         </div>
     }
 }
