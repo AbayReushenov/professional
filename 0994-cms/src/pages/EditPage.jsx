@@ -9,15 +9,48 @@ export class EditPage extends Component {
         this.jsEditor = createRef();
         this.handleSave = this.handleSave.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.state = {
+            name: '',
+            html: '',
+            css: '',
+            title: '',
+            js: '',
+        }
     }
     componentDidMount() {
+        let formData = new FormData();
         const uri = window.location.pathname.split("/");
         const pageId = uri[uri.length-1];
-        // fetch()
-        this.htmlEditor.current.editor.setValue("а тут что-то из базы данных")
+        formData.append('id', pageId);
+        fetch("http://test.hostingaba.beget.tech/getPage", {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data=>{
+                this.setState({
+                    name: data['name'],
+                    html: data['html'],
+                    title: data['title'],
+                    css: data['css'],
+                    js: data['js']
+                })
+            })
     }
-    handleSave(){
-        // Отправились изменнёные значения на сервер
+
+    handleSave() {
+        let formData = new FormData();
+        formData.append('name', this.state.name);
+        formData.append('title', this.state.title);
+        formData.append('html', this.htmlEditor.current.editor.setValue())
+        formData.append('css', this.cssEditor.current.editor.setValue());
+        formData.append('js', this.jsEditor.current.editor.setValue());
+        fetch("http://test.hostingaba.beget.tech/editPage", {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(result => console.log(result))
     }
     handleInputChange(){
 
@@ -34,7 +67,7 @@ export class EditPage extends Component {
                        aria-controls="nav-js" aria-selected="false">JS</a>
                     <a className="nav-link" id="nav-extraHTML-tab" data-toggle="tab" href="#nav-extraHTML" role="tab"
                        aria-controls="nav-extraHTML" aria-selected="false">Параметры</a>
-                    <button onClick={this.handleSave} className="btn btn-light ml-auto">[сохранить]</button>
+                    <button onClick={this.handleSave} className="btn btn-outline-info ml-auto">сохранить</button>
                 </div>
             </nav>
             <div className="tab-content" id="nav-tabContent">
@@ -48,6 +81,7 @@ export class EditPage extends Component {
                             fontSize:18,
                             enableEmmet:true
                         }}
+                        value = {this.state.html}
                     />
                 </div>
                 <div className="tab-pane fade" id="nav-css" role="tabpanel" aria-labelledby="nav-css-tab">
@@ -60,6 +94,7 @@ export class EditPage extends Component {
                             fontSize:18,
                             enableEmmet:true
                         }}
+                        value = {this.state.css}
                     />
                 </div>
                 <div className="tab-pane fade" id="nav-js" role="tabpanel" aria-labelledby="nav-js-tab">
@@ -72,15 +107,16 @@ export class EditPage extends Component {
                             fontSize:18,
                             enableEmmet:true
                         }}
+                        value = {this.state.js}
                     />
                 </div>
                 <div className="tab-pane fade" id="nav-extraHTML" role="tabpanel" aria-labelledby="nav-extraHTML-tab">
                     <div className="col-10 mx-auto my-3">
                         <div className="mb-3">
-                            <input name="name" onChange={this.handleInputChange} type="text" className="form-control" placeholder="URI страницы"/>
+                            <input name="name" onChange={this.handleInputChange} type="text" className="form-control" value={this.state.name} placeholder="URI страницы"/>
                         </div>
                         <div className="mb-3">
-                            <input name="title" onChange={this.handleInputChange} type="text" className="form-control" placeholder="Заголовок страницы"/>
+                            <input name="title" onChange={this.handleInputChange} type="text" className="form-control" value={this.state.title} placeholder="Заголовок страницы"/>
                         </div>
                     </div>
                 </div>

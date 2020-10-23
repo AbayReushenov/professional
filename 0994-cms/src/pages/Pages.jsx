@@ -4,6 +4,7 @@ import {NavLink} from "react-router-dom";
 const Tr = (props)=>{
     return <tr>
         <th scope="row">{props.index}</th>
+        <th scope="row">{props.id}</th>
         <td>{props.title}</td>
         <td>{props.name}</td>
         <td><NavLink to={"editPage/"+props.pageId}>[редактировать]</NavLink></td>
@@ -36,6 +37,7 @@ export class Pages extends Component{
                 <thead>
                 <tr>
                     <th scope="col">#</th>
+                    <th scope="col">id</th>
                     <th scope="col">Заголовок</th>
                     <th scope="col">Адрес</th>
                     <th scope="col">Управление</th>
