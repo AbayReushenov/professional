@@ -42,9 +42,9 @@ export class EditPage extends Component {
         let formData = new FormData();
         formData.append('name', this.state.name);
         formData.append('title', this.state.title);
-        formData.append('html', this.htmlEditor.current.editor.setValue())
-        formData.append('css', this.cssEditor.current.editor.setValue());
-        formData.append('js', this.jsEditor.current.editor.setValue());
+        formData.append('html', this.htmlEditor.current.editor.getValue())
+        formData.append('css', this.cssEditor.current.editor.getValue());
+        formData.append('js', this.jsEditor.current.editor.getValue());
         fetch("http://test.hostingaba.beget.tech/editPage", {
             method: 'POST',
             body: formData
