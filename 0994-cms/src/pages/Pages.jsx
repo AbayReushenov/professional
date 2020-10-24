@@ -4,30 +4,26 @@ import {NavLink} from "react-router-dom";
 const Tr = (props)=>{
     return <tr>
         <th scope="row">{props.index}</th>
-        <th scope="row">{props.id}</th>
         <td>{props.title}</td>
         <td>{props.name}</td>
-        <td><NavLink to={"editPage/"+props.pageId}>[редактировать]</NavLink></td>
+        <td><NavLink to={"editPage/"+props.id}>[редактировать]</NavLink></td>
     </tr>
 }
 
 export class Pages extends Component{
-    constructor() {
-        super();
-        this.state = {
+    state = {
             pages: []
         }
-    }
+
     componentDidMount() {
-        fetch("http://test.hostingaba.beget.tech/getPagesJSON")
-            .then(response=>response.json())
-            .then(pages=>{
+        fetch('http://test.hostingaba.beget.tech/getPagesJSON')
+            .then(response => response.json())
+            .then(data => {
                 this.setState({
-                    pages: pages.map((page,index)=>{
-                        return <Tr key={index} pageId={page.id} index={index+1} name={page.name} title={page.title} />
+                    pages: data.map((page, index) => {
+                        return <Tr key={index} id={page.id} index={index + 1} name={page.name} title={page.title}/>
                     })
                 })
-
             })
     }
 
@@ -37,7 +33,6 @@ export class Pages extends Component{
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">id</th>
                     <th scope="col">Заголовок</th>
                     <th scope="col">Адрес</th>
                     <th scope="col">Управление</th>

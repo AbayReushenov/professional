@@ -1,22 +1,31 @@
-import React, {createRef, Component} from "react";
+import React, {createRef, Component } from "react";
 import AceEditor from "react-ace";
+import "ace-builds/src-noconflict/mode-html";
+import "ace-builds/src-noconflict/mode-css";
+import "ace-builds/src-noconflict/mode-javascript";
+import "ace-builds/src-noconflict/theme-vibrant_ink";
+import "emmet-core";
+import "ace-builds/src-noconflict/ext-emmet";
 
 export class EditPage extends Component {
-    constructor() {
-        super();
-        this.htmlEditor = createRef();
-        this.cssEditor = createRef();
-        this.jsEditor = createRef();
-        this.handleSave = this.handleSave.bind(this);
-        this.handleInputChange = this.handleInputChange.bind(this);
+    constructor(props) {
+        super(props);
         this.state = {
             name: '',
             html: '',
             css: '',
             title: '',
             js: '',
-        }
+            id:0
+        };
+        this.htmlEditor = createRef();
+        this.cssEditor = createRef();
+        this.jsEditor = createRef();
+        this.handleSave = this.handleSave.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.onChange = this.onChange.bind(this);
     }
+
     componentDidMount() {
         let formData = new FormData();
         const uri = window.location.pathname.split("/");
@@ -33,28 +42,41 @@ export class EditPage extends Component {
                     html: data['html'],
                     title: data['title'],
                     css: data['css'],
-                    js: data['js']
+                    js: data['js'],
+                    id: data['id']
                 })
             })
     }
 
-    handleSave() {
+    handleSave(event) {
         let formData = new FormData();
+        formData.append('id', this.state.id);
         formData.append('name', this.state.name);
         formData.append('title', this.state.title);
-        formData.append('html', this.htmlEditor.current.editor.getValue())
+        formData.append('html', this.htmlEditor.current.editor.getValue());
         formData.append('css', this.cssEditor.current.editor.getValue());
         formData.append('js', this.jsEditor.current.editor.getValue());
         fetch("http://test.hostingaba.beget.tech/editPage", {
             method: 'POST',
             body: formData
+              })
+            .then(response => console.log(response));
+        event.preventDefault();
+    }
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        this.setState({
+            [name]: value
         })
-            .then(response => response.json())
-            .then(result => console.log(result))
     }
-    handleInputChange(){
+    onChange(event){
+        this.setState({
+            js: event.target.value
+        })
+    }
 
-    }
     render() {
         return <div>
             <nav>
@@ -76,12 +98,13 @@ export class EditPage extends Component {
                         mode="html"
                         width="100%"
                         theme="vibrant_ink"
-                        ref={this.htmlEditor}
                         setOptions={{
                             fontSize:18,
                             enableEmmet:true
                         }}
-                        value = {this.state.html}
+                        ref={this.htmlEditor}
+                        defaultValue={this.state.html}
+                        value={this.state.html}
                     />
                 </div>
                 <div className="tab-pane fade" id="nav-css" role="tabpanel" aria-labelledby="nav-css-tab">
@@ -89,12 +112,13 @@ export class EditPage extends Component {
                         mode="css"
                         width="100%"
                         theme="vibrant_ink"
-                        ref={this.cssEditor}
                         setOptions={{
                             fontSize:18,
                             enableEmmet:true
                         }}
-                        value = {this.state.css}
+                        defaultValue={this.state.css}
+                        value={this.state.css}
+                        ref={this.cssEditor}
                     />
                 </div>
                 <div className="tab-pane fade" id="nav-js" role="tabpanel" aria-labelledby="nav-js-tab">
@@ -102,12 +126,18 @@ export class EditPage extends Component {
                         mode="javascript"
                         width="100%"
                         theme="vibrant_ink"
-                        ref={this.jsEditor}
                         setOptions={{
                             fontSize:18,
                             enableEmmet:true
                         }}
-                        value = {this.state.js}
+                        defaultValue={this.state.js}
+                        value={this.state.js}
+                        ref={this.jsEditor}
+                        name="UNIQUE_ID_OF_DIV"
+                        editorProps={{ $blockScrolling: true }}
+                        enableBasicAutocompletion={true}
+                        enableLiveAutocompletion={true}
+                        enableSnippets={true}
                     />
                 </div>
                 <div className="tab-pane fade" id="nav-extraHTML" role="tabpanel" aria-labelledby="nav-extraHTML-tab">
