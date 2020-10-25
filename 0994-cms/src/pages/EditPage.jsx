@@ -23,7 +23,6 @@ export class EditPage extends Component {
         this.jsEditor = createRef();
         this.handleSave = this.handleSave.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.onChange = this.onChange.bind(this);
     }
 
     componentDidMount() {
@@ -71,11 +70,11 @@ export class EditPage extends Component {
             [name]: value
         })
     }
-    onChange(event){
-        this.setState({
-            js: event.target.value
-        })
-    }
+    // onChange(event){
+    //     this.setState({
+    //         js: event.target.value
+    //     })
+    // }
 
     render() {
         return <div>
@@ -105,6 +104,11 @@ export class EditPage extends Component {
                         ref={this.htmlEditor}
                         defaultValue={this.state.html}
                         value={this.state.html}
+                        name="UNIQUE_ID_OF_DIV_HTML"
+                        editorProps={{ $blockScrolling: true }}
+                        enableBasicAutocompletion={true}
+                        enableLiveAutocompletion={true}
+                        enableSnippets={true}
                     />
                 </div>
                 <div className="tab-pane fade" id="nav-css" role="tabpanel" aria-labelledby="nav-css-tab">
@@ -119,6 +123,11 @@ export class EditPage extends Component {
                         defaultValue={this.state.css}
                         value={this.state.css}
                         ref={this.cssEditor}
+                        name="UNIQUE_ID_OF_DIV_CSS"
+                        editorProps={{ $blockScrolling: true }}
+                        enableBasicAutocompletion={true}
+                        enableLiveAutocompletion={true}
+                        enableSnippets={true}
                     />
                 </div>
                 <div className="tab-pane fade" id="nav-js" role="tabpanel" aria-labelledby="nav-js-tab">
@@ -133,7 +142,7 @@ export class EditPage extends Component {
                         defaultValue={this.state.js}
                         value={this.state.js}
                         ref={this.jsEditor}
-                        name="UNIQUE_ID_OF_DIV"
+                        name="UNIQUE_ID_OF_DIV_JS"
                         editorProps={{ $blockScrolling: true }}
                         enableBasicAutocompletion={true}
                         enableLiveAutocompletion={true}

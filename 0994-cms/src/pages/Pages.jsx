@@ -1,4 +1,4 @@
-import React , {Component} from "react";
+import React from "react";
 import {NavLink} from "react-router-dom";
 
 const Tr = (props)=>{
@@ -6,24 +6,27 @@ const Tr = (props)=>{
         <th scope="row">{props.index}</th>
         <td>{props.title}</td>
         <td>{props.name}</td>
-        <td><NavLink to={"editPage/"+props.id}>[редактировать]</NavLink></td>
+        <td><NavLink to={"editPage/"+props.pageId}>[редактировать]</NavLink></td>
     </tr>
 }
 
-export class Pages extends Component{
-    state = {
+export class Pages extends React.Component{
+    constructor() {
+        super();
+        this.state = {
             pages: []
         }
-
+    }
     componentDidMount() {
-        fetch('http://test.hostingaba.beget.tech/getPagesJSON')
-            .then(response => response.json())
-            .then(data => {
+        fetch("http://test.hostingaba.beget.tech/getPagesJSON")
+            .then(response=>response.json())
+            .then(data=>{
                 this.setState({
-                    pages: data.map((page, index) => {
-                        return <Tr key={index} id={page.id} index={index + 1} name={page.name} title={page.title}/>
+                    pages: data.map((page,index)=>{
+                        return <Tr key={index} pageId={page.id} index={index+1} name={page.name} title={page.title} />
                     })
                 })
+
             })
     }
 

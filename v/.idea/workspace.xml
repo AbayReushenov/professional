@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3da837d4-07c5-4acd-8033-658bc846528b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../0994-cms/src/pages/EditPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../0994-cms/src/pages/EditPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../0994-cms/src/pages/Pages.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../0994-cms/src/pages/Pages.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0994-cms/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/0994-cms/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0994-cms/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/0994-cms/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0994-cms/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/0994-cms/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0994-cms/src/pages/Pages.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/0994-cms/src/pages/Pages.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +47,7 @@
       <workItem from="1603278265923" duration="1978000" />
       <workItem from="1603446025643" duration="63000" />
       <workItem from="1603449006888" duration="1314000" />
+      <workItem from="1603643250002" duration="706000" />
     </task>
     <servers />
   </component>
