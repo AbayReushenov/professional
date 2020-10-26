@@ -20,9 +20,9 @@ export class Pages extends React.Component{
     componentDidMount() {
         fetch("http://test.hostingaba.beget.tech/getPagesJSON")
             .then(response=>response.json())
-            .then(data=>{
+            .then(pages=>{
                 this.setState({
-                    pages: data.map((page,index)=>{
+                    pages: pages.map((page,index)=>{
                         return <Tr key={index} pageId={page.id} index={index+1} name={page.name} title={page.title} />
                     })
                 })
