@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60094aeb-16ef-4521-b2bc-c5fc1bcb81a4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu0994_lk/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/edu0994_lk/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="60094aeb-16ef-4521-b2bc-c5fc1bcb81a4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/edu0994_lk" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ipLvKVLfhIK64lo5ks1wjAJrXd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -22,7 +19,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/my-app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -53,11 +50,24 @@
       <workItem from="1602671118113" duration="7717000" />
       <workItem from="1602686076455" duration="25000" />
       <workItem from="1602771230579" duration="1425000" />
+      <workItem from="1603744253967" duration="356000" />
     </task>
+    <task id="LOCAL-00001" summary="26-10-2020 Fix problems">
+      <created>1603744343781</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603744343781</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="26-10-2020 Fix problems" />
+    <option name="LAST_COMMIT_MESSAGE" value="26-10-2020 Fix problems" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2330" y="133" width="1457" height="813" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602599918816">
