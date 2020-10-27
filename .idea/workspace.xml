@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60094aeb-16ef-4521-b2bc-c5fc1bcb81a4" name="Default Changelist" comment="" />
+    <list default="true" id="60094aeb-16ef-4521-b2bc-c5fc1bcb81a4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +53,9 @@
       <workItem from="1602671118113" duration="7717000" />
       <workItem from="1602686076455" duration="25000" />
       <workItem from="1602771230579" duration="1425000" />
-      <workItem from="1603744253967" duration="356000" />
+      <workItem from="1603744253967" duration="454000" />
+      <workItem from="1603785654914" duration="15000" />
+      <workItem from="1603785671212" duration="384000" />
     </task>
     <task id="LOCAL-00001" summary="26-10-2020 Fix problems">
       <created>1603744343781</created>
@@ -59,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603744343781</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="26-10-2020 Fix problems">
+      <created>1603744613714</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603744613714</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,16 +86,24 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2330" y="133" width="1457" height="813" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.41.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602599918816" />
-    <state x="637" y="207" width="424" height="491" key="FileChooserDialogImpl" timestamp="1602780944054">
+    <state x="386" y="98" width="1138" height="918" key="CommitChangelistDialog2" timestamp="1603744613676">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="637" y="207" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1602780944054" />
+    <state x="386" y="98" width="1138" height="918" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603744613676" />
+    <state x="637" y="207" width="424" height="491" key="FileChooserDialogImpl" timestamp="1603785668145">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="637" y="207" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603785668145" />
     <state x="637" y="209" key="FileChooserDialogImpl/0.41.1920.985/1920.0.1920.1080@0.41.1920.985" timestamp="1602607537116" />
     <state x="2557" y="184" width="636" height="719" key="FileChooserDialogImpl/0.41.1920.985/1920.0.1920.1080@1920.0.1920.1080" timestamp="1602600039479" />
     <state x="187" y="117" width="1536" height="879" key="MergeDialog" timestamp="1602780489033">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="187" y="117" width="1536" height="879" key="MergeDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1602780489033" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1603744619896">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603744619896" />
     <state x="741" y="468" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602780435907">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

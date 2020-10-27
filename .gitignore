@@ -1,6 +1,14 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+# $ touch .gitignore
+# $ touch .gitignore
+#If you want to ignore a file that is already checked in, you must untrack the file before
+#you add a rule to ignore it. From your terminal, untrack the file.
+#
+# $ git rm --cached FILENAME
 # dependencies
+#Configure Git to use the exclude file ~/.gitignore_global for all Git repositories.
+#$ git config --global core.excludesfile ~/.gitignore_global
+# https://github.com/github/gitignore
 /node_modules
 /.pnp
 .pnp.js
@@ -22,3 +30,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 /edu0994_lk/
+.zip
+.vscode-test
+
+# yarn v2
+
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
