@@ -1,31 +1,30 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-// Список веток (каталогов)
+import {host} from "../config";
 
 const Tr = (props)=>{
     return <tr>
         <th scope="row">{props.index}</th>
-        <td>{props.name}</td>
         <td>{props.name_rus}</td>
-        <td><NavLink to={"editBranch/"+props.branchId}>[редактировать]</NavLink></td>
+        <td>{props.name}</td>
     </tr>
 }
+
 
 export class Branches extends React.Component{
     constructor() {
         super();
         this.state = {
-            branches: []
+            branches : []
         }
     }
+
     componentDidMount() {
-        fetch("http://test.hostingaba.beget.tech/getBranches")
+        fetch(host+"getBranchesJSON")
             .then(response=>response.json())
             .then(branches=>{
                 this.setState({
-                    branches: branches.map((branch,index)=>{
-                        return <Tr key={index} branchId={branch.id} index={index+1} name={branch.name} name_rus={branch.name_rus} />
-                    })
+                    branches: branches.map((branch,index)=><Tr key={index} index={index+1} name={branch.name} name_rus={branch.name_rus}/>)
                 })
 
             })
@@ -36,10 +35,9 @@ export class Branches extends React.Component{
             <table className="table table-striped">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Наименование</th>
-                    <th scope="col">Управление</th>
+                    <th scope="col"><i className="fas fa-list-ol"></i></th>
+                    <th scope="col"><i className="fas fa-book-reader"></i>  Название</th>
+                    <th scope="col"><i className="fas fa-folder-open"></i> Адрес</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,7 +45,7 @@ export class Branches extends React.Component{
                 </tbody>
             </table>
 
-            <NavLink className="btn btn-primary" to="addBranch">Добавить ветку</NavLink>
+            <NavLink className="btn btn-primary" to="addBranch"><i className="fas fa-plus-square"></i> Добавить раздел сайта</NavLink>
         </div>
     }
 }

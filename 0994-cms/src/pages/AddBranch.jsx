@@ -1,62 +1,94 @@
 import React from "react";
-// Страница добавления ветки (каталога)
-export class AddBranch extends React.Component {
+import {cmsPath, host} from "../config";
+import {Redirect} from "react-router-dom";
+
+const Option = (props)=>{
+    return <option value={props.id}>{props.name_rus}</option>
+}
+
+export class AddBranch extends React.Component{
     constructor() {
         super();
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSave = this.handleSave.bind(this);
         this.state = {
-            name: "",
-            name_rus: ""
+            referrer: null,
+            name: '',
+            name_rus: '',
+            options: [],
+            branch: 1
         }
     }
 
     handleSave(){
         let formData = new FormData();
-        formData.append('name', this.state.name);
+        formData.append('name',this.state.name);
         formData.append('name_rus', this.state.name_rus);
-        fetch("http://test.hostingaba.beget.tech/addBranch",{
-            method: 'POST',
+        fetch(host+"addBranch",{
+            method: "POST",
             body: formData
-        })
-            .then(response=>response.json())
-            .then(result=>console.log(result))
+        }).then(response=>response.json()).then(res=>{
+            console.log("Ветка добавлена");
+            let formData = new FormData();
+            formData.append('name', this.state.name);
+            formData.append('title', this.state.name_rus);
+            formData.append('html',`<h1>${this.state.name_rus}</h1>`);
+            formData.append('css',"");
+            formData.append('js',"");
+            formData.append('branch',this.state.branch)
+            fetch(host+"addPage",{
+                method: 'POST',
+                body:formData
+            }).then(response=>response.json())
+                .then(res=>{
+                    console.log("Страница раздела успешно создана");
+                    this.setState({
+                            referrer:"branches/"
+                        }
+                    )
+                })
+        });
+    }
+
+    handleInputChange(e){
+        const target = e.target;
+        const name = target.name;
+        const value = target.value;
+        console.log(name, value)
+        this.setState({
+            [name]: value
+        });
     }
 
     componentDidMount() {
-        console.log("Вызвана функция componentDidMount")
-    }
+        fetch(host+"getBranchesJSON")
+            .then(response=>response.json())
+            .then(branches=>{
+                this.setState({
+                    options: branches.map((branch,index)=><Option key={index} id={branch.id} name_rus={branch.name_rus}/>)
+                })
 
-    handleInputChange(event){
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-        this.setState({
-            [name]: value
-        })
+            })
     }
 
     render() {
-        return<div>
-            <h1>Создать ветку</h1>
-            <nav>
-                <div className="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a className="nav-link" id="nav-extraHTML-tab" data-toggle="tab" href="#nav-extraHTML" role="tab"
-                       aria-controls="nav-extraHTML" aria-selected="false">Параметры</a>
-                    <button onClick={this.handleSave} className="btn btn-outline-success ml-auto">[сохранить]</button>
-                </div>
-            </nav>
-            <div className="tab-content" id="nav-tabContent">
-                <div className="tab-pane fade" id="nav-extraHTML" role="tabpanel" aria-labelledby="nav-extraHTML-tab">
-                    <div className="col-10 mx-auto my-3">
-                        <div className="mb-3">
-                            <input name="name" onChange={this.handleInputChange} type="text" className="form-control" placeholder="Name "/>
-                        </div>
-                        <div className="mb-3">
-                            <input name="name_rus" onChange={this.handleInputChange} type="text" className="form-control" placeholder="Наименование"/>
-                        </div>
-                    </div>
-                </div>
+        const referrer = this.state.referrer;
+        if (referrer) return <Redirect to={cmsPath+referrer}/>
+        return <div>
+            <h2 className="my-4 text-center"><i className="fas fa-folder-plus"></i> Добавить раздел сайта</h2>
+            <div className="mb-3">
+                <input name="name" value={this.state.name} onChange={this.handleInputChange} type="text" className="form-control" placeholder="Name"/>
+            </div>
+            <div className="mb-3">
+                <input name="name_rus" value={this.state.name_rus} onChange={this.handleInputChange} type="text" className="form-control" placeholder="Name_RUS"/>
+            </div>
+            <div className="mb-3">
+                <select name="branch" onChange={this.handleInputChange} className="form-control">
+                    {this.state.options}
+                </select>
+            </div>
+            <div className="mb-3">
+                <button className="btn btn-outline-success" onClick={this.handleSave}><i className="far fa-save"></i>  Сохранить</button>
             </div>
         </div>
     }
