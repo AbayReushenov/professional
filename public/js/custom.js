@@ -126,8 +126,8 @@ $(document).ready(function () {
       var target_date = new Date(easter()).getTime();
 
       // comment lines below
-      var date = new Date();
-      date.setDate(date.getDate() + 3);
+     // var date = new Date();
+    //  date.setDate(date.getDate() + 3);
       //var target_date = date.getTime();
       //----------------------------------------
 
@@ -194,7 +194,7 @@ $(document).ready(function () {
   let monthEaster = document.querySelector('.event_month');
   // display result
   dayEaster.innerHTML = dayEvent;
-  monthEaster.innerHTML = (monthEvent == 4) ? "мая" : "апреля";
+  monthEaster.innerHTML = (monthEvent == 4) ? "мая" : "апрреля";
   /*
 
   6. Init Lightbox
